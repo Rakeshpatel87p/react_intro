@@ -1,19 +1,19 @@
-var USER_DATA = {
+let USER_DATA = {
     name: 'Rakesh Patel',
     username: 'rakeshpatel87p',
     age: '21'
 }
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-var Age = React.createClass({
-  render: function () {
+const Age = React.createClass({
+  render() {
 	return <div>{this.props.ageUser}</div>  }
 });
 
-var ProfileLink = React.createClass({
-  render: function () {
+const ProfileLink = React.createClass({
+  render() {
     return (
       <div>
         <a href={'https://www.github.com/' +  this.props.username}>
@@ -24,14 +24,14 @@ var ProfileLink = React.createClass({
   }
 });
 
-var ProfileName = React.createClass({
-  render: function (){
+const ProfileName = React.createClass({
+  render(){
     return <div>{this.props.name}</div>
   }
 });
 
-var Avatar = React.createClass({
-  render: function () {
+const Avatar = React.createClass({
+  render() {
     return(
       <div>
         <Age ageUser={this.props.user.age}/>
