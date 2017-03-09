@@ -2,7 +2,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 	template: __dirname + '/app/index.html',
 	filname: 'index.html',
-	inject: 'body'
+	inject: 'body' //or "header"
 })
 
 module.exports = {
