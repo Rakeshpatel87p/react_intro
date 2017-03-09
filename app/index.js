@@ -1,11 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-var HelloWorld = React.createClass({
-    render: function() {
-        return ( < div > Hi! < /div>)
+const HelloWorld = React.createClass({
+    render() {
+        return ( <div>Hi {this.props.name}!</div>)
     }
 });
 
-ReactDOM.render( < HelloWorld / > , document.getElementById('app'))
+ReactDOM.render( < HelloWorld name="billymax"/ > , document.getElementById('app'))
 
