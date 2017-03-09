@@ -1,45 +1,48 @@
-let USER_DATA = {
-    name: 'Rakesh Patel',
-    username: 'rakeshpatel87p',
-    age: '21'
-}
+const 
+	React = require('react'),
+	ReactDOM = require('react-dom'),
+	routes = require('./config/routes')
 
-const React = require('react');
-const ReactDOM = require('react-dom');
 
-const Age = React.createClass({
-  render() {
-	return <div>{this.props.ageUser}</div>  }
-});
+ReactDOM.render(routes, document.getElementById('app'));
 
-const ProfileLink = React.createClass({
-  render() {
-    return (
-      <div>
-        <a href={'https://www.github.com/' +  this.props.username}>
-          {this.props.username}
-        </a>
-      </div>
-    );
-  }
-});
+// let USER_DATA = {
+//     name: 'Rakesh Patel',
+//     username: 'rakeshpatel87p',
+//     age: '21'
+// }
 
-const ProfileName = React.createClass({
-  render(){
-    return <div>{this.props.name}</div>
-  }
-});
+// const Age = React.createClass({
+//   render() {
+// 	return <div>{this.props.ageUser}</div>  }
+// });
 
-const Avatar = React.createClass({
-  render() {
-    return(
-      <div>
-        <Age ageUser={this.props.user.age}/>
-        <ProfileName name={this.props.user.name}/>
-        <ProfileLink username={this.props.user.username}/>
-      </div>
-    );
-  }
-});
+// const ProfileLink = React.createClass({
+//   render() {
+//     return (
+//       <div>
+//         <a href={'https://www.github.com/' +  this.props.username}>
+//           {this.props.username}
+//         </a>
+//       </div>
+//     );
+//   }
+// });
 
-ReactDOM.render(<Avatar user={USER_DATA} />, document.getElementById('app'));
+// const ProfileName = React.createClass({
+//   render(){
+//     return <div>{this.props.name}</div>
+//   }
+// });
+
+// const Avatar = React.createClass({
+//   render() {
+//     return(
+//       <div>
+//         <Age ageUser={this.props.user.age}/>
+//         <ProfileName name={this.props.user.name}/>
+//         <ProfileLink username={this.props.user.username}/>
+//       </div>
+//     );
+//   }
+// });
