@@ -5,10 +5,10 @@ const
 const Main = React.createClass({
 	render(){
 		return (
-				<div className="main-container">Hello From Hey!{this.props.children}</div>
+				<div className="main-container">Hello From!{this.props.children}</div>
 			)
 			
 	}
 });
 
-module.exports = Main;
+export default Main;

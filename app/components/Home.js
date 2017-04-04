@@ -1,6 +1,5 @@
-const 
-	React = require('react'),
-	ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const Home = React.createClass({
 	render(){
@@ -8,4 +7,4 @@ const Home = React.createClass({
 	}
 });
 
-module.exports = Home;
+export default Home
