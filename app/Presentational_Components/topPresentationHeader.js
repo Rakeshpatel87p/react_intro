@@ -5,13 +5,13 @@ const topPresentationHeader = React.createClass({
 	render(){
 		return (
 			<div>
-				<h1>Some Header Text</h1>
+				<h1>{this.props.route.header}</h1>
 				<div>
 					<form>
 						<div className="formGroup">
 							<input 
 								className="formControl"
-								placeHolder="GitHub Username"
+								placeholder="GitHub Username"
 								type="text" />
 						</div>
 						<div className="formGroup">
@@ -23,7 +23,7 @@ const topPresentationHeader = React.createClass({
 						</div>
 					</form>
 				</div>
-			<div>
+			</div>
 			)
 	}
 });

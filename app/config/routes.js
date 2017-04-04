@@ -8,8 +8,8 @@ const routes = (
 	<Router history={hashHistory}>
 		<Route path="/" component={Main} >
 			<IndexRoute component={Home} />
-			<Route path="playerOne" component={topPresentationHeader}/>
-			<Route path="playerTwo/:playerOne" component={topPresentationHeader}/>
+			<Route path="playerOne" header="Player One" component={topPresentationHeader}/>
+			<Route path="playerTwo/:playerOne" header="Player Two" component={topPresentationHeader}/>
 		</Route>
 	</Router>
 )
