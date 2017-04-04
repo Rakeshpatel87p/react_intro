@@ -11,4 +11,4 @@ const routes = (
 	</Router>
 )
 
-export default Routes
+export default routes;
