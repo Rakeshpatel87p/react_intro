@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const topPresentationHeader = React.createClass({
+	getInitialState() {
+		return {
+			username: ''
+		}		
+	},
 	render(){
 		return (
 			<div>
@@ -11,6 +16,8 @@ const topPresentationHeader = React.createClass({
 						<div className="formGroup">
 							<input 
 								className="formControl"
+								onChange={this.onUpdateUser}
+								value={this.state.username}
 								placeholder="GitHub Username"
 								type="text" />
 						</div>
