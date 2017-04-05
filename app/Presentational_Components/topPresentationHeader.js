@@ -1,36 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Prompt from './Prompt';
 
 const topPresentationHeader = React.createClass({
-	getInitialState() {
+	contextTypes: {
+		router: React.PropTypes.object.isRequired
+	},
+	getInitialState(){
 		return {
 			username: ''
 		}		
 	},
+	handleUpdateUser(e){
+		e.preventDefault();
+		this.setState({
+			username: e.target.value
+		})
+	},
+	handleSubmitUser(e){
+		e.preventDefault();
+		var username = this.state.username;
+		this.setState({
+			username: ''
+		})
+		if (this.props.routeParams.playerOne){
+			this.context.router.push({
+				pathname: '/battle',
+				query: {
+					playerOne: this.props.routeParams.playerOne,
+					playerTwo: this.state.username
+				}
+			})
+		}
+		else {
+			this.context.router.push('/playerTwo/' + this.state.username)
+		}
+	},
 	render(){
 		return (
-			<div>
-				<h1>{this.props.route.header}</h1>
-				<div>
-					<form>
-						<div className="formGroup">
-							<input 
-								className="formControl"
-								onChange={this.onUpdateUser}
-								value={this.state.username}
-								placeholder="GitHub Username"
-								type="text" />
-						</div>
-						<div className="formGroup">
-							<button 
-								className="Hey"
-								type="submit">
-								Continue
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
+			<Prompt 
+				onSubmitUser = {this.handleSubmitUser}
+				onUpdateUser = {this.handleUpdateUser}
+				header = {this.props.route.header}
+				username = {this.state.username}/>
 			)
 	}
 });
